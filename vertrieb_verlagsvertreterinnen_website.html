@@ -224,6 +224,63 @@
   filter: none;
   transform: none;
 }
+/* Hörbuch chart */
+.modal-visual .bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  height: 250px;
+  padding: 35px 10px 0;
+}
+
+.modal-visual .bar-item {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.modal-visual .bar-item .bar {
+  flex: none;
+  width: 100%;
+  position: relative;
+  border-radius: 9px 9px 0 0;
+}
+
+.modal-visual .bar-item:nth-child(1) .bar {
+  height: 40%;
+  background: var(--sage);
+}
+
+.modal-visual .bar-item:nth-child(2) .bar {
+  height: 100%;
+  background: var(--sage);
+}
+
+.modal-visual .bar-item:nth-child(3) .bar {
+  height: 57%;
+  background: var(--lav);
+}
+
+.modal-visual .bar-item .bar label {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  font-size: .9rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.modal-visual .bar-item > span {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.3;
+}
 </style>
 </head>
 <body>
@@ -233,7 +290,7 @@
   <a class="brand" href="#start"><span class="brand-mark">☷</span><span>Vertrieb & Verlagsvertreter*innen</span></a>
   <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Agenda öffnen"><span class="menu-label">Agenda</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
   <nav class="navlinks" id="navlinks" aria-label="Hauptnavigation">
-   <a href="#markt">Einführung: Der deutsche Buchmarkt im Überblick</a><a href="#kette">Der Vertrieb im Buchverlag: Aufgaben und Struktur</a><a href="#konferenz">Die Vertreterkonferenz</a><a href="#berufsbild">Verlagsvertreter*innen: Berufsbild und Aufgaben</a><a href="#vertrauen">Vertrauen und Interessenkonflikte</a><a href="#wandel">Herausforderungen und Wandel des Berufs</a><a href="#fazit">Fazit</a><a href="#quellen">Quellen</a>
+   <a href="#markt">01 · Marktanalyse</a><a href="#kette">02 · Die Vertriebskette im Buchhandel</a><a href="#bereiche">03 · Die Struktur des Verlagsvertriebs</a><a href="#konferenz">04 · Die Vertreterkonferenz</a><a href="#berufsbild">05 · Das Berufsbild: Verlagsvertreter*innen</a><a href="#besuch">06 · Der Vertreterbesuch</a><a href="#faehigkeiten">07 · Das persönliche Profil</a><a href="#vertrauen">08 · Vertrauen und Interessenkonflikte</a><a href="#wandel">09 · Wandel des Berufs</a><a href="#fazit">10 · Die zentrale Erkenntnis</a><a href="#quellen">11 · Quellen</a>
   </nav>
  </div>
 </header>
@@ -272,7 +329,7 @@
 
 <section class="section chain-section" id="kette">
  <div class="wrap">
-  <div class="section-head reveal"><div><p class="eyebrow">02 · Vom Programm zum Publikum</p><h2>Ein Buch erscheint.<br>Und dann?</h2></div><p>Zwischen Veröffentlichung und Entdeckung durch Leser*innen liegen mehrere Schritte und Entscheidungen.</p></div>
+  <div class="section-head reveal"><div><p class="eyebrow">02 · Die Vertriebskette im Buchhandel</p><h2>Ein Buch erscheint.<br>Und dann?</h2></div><p>Zwischen Veröffentlichung und Entdeckung durch Leser*innen liegen mehrere Schritte und Entscheidungen.</p></div>
   <!--<div class="chain reveal">
    <div class="chain-node"><div class="ico">📚</div><strong>Verlag</strong><small>Programm & Titel</small></div>
    <div class="chain-node"><div class="ico">🔄</div><strong>Vertrieb</strong><small>Planung & Vermittlung</small></div>
@@ -327,7 +384,7 @@
 
 <section class="section divisions" id="bereiche">
  <div class="wrap">
-  <div class="section-head reveal"><div><p class="eyebrow">03 · Das Zusammenspiel</p><h2>Drei Bereiche.<br>Ein gemeinsamer Weg.</h2></div><p>Vom ersten Kontakt bis zum versendeten Buch greifen Organisation, Logistik und persönliche Beratung ineinander.</p></div>
+  <div class="section-head reveal"><div><p class="eyebrow">03 · Die Struktur des Verlagsvertriebs</p><h2>Drei Bereiche.<br>Ein gemeinsamer Weg.</h2></div><p>Vom ersten Kontakt bis zum versendeten Buch greifen Organisation, Logistik und persönliche Beratung ineinander.</p></div>
   <div class="division-top reveal"><div class="hub">VERTRIEB</div></div>
   <div class="division-grid reveal">
    <!--<button class="division" data-modal="inside"><span class="num">01 / ORGANISATION</span><span class="symbol">▤</span><h3>Innendienst</h3><span class="more">Aufgaben entdecken ↓</span></button>
@@ -375,7 +432,7 @@
 
 <section class="section conference" id="konferenz">
  <div class="wrap conference-grid">
-  <div class="reveal"><p class="eyebrow">04 · Im Austausch</p><h2>Vertreterkonferenz:<br>Programm trifft Markt.</h2><p class="lead">Eine Konferenz ist mehr als eine Programmvorstellung. Sie gleicht Verlagsentscheidungen mit Erfahrungen aus dem Buchhandel ab.</p>
+  <div class="reveal"><p class="eyebrow">04 · Die Vertreterkonferenz</p><h2>Vertreterkonferenz:<br>Programm trifft Markt.</h2><p class="lead">Eine Konferenz ist mehr als eine Programmvorstellung. Sie gleicht Verlagsentscheidungen mit Erfahrungen aus dem Buchhandel ab.</p>
    <ul class="conference-list"><li>Lektorat stellt Titel und Autor*innen vor.</li><li>Marketing und Presse erläutern geplante Maßnahmen.</li><li>Vertreter*innen prüfen Vermittelbarkeit und Zielgruppen.</li><li>Feedback zu Cover, Titel und Marktchancen fließt zurück.</li></ul>
   </div>
   <div class="conference-art reveal" role="img" aria-label="Illustration einer Verlagskonferenz mit Präsentation und Teilnehmenden">
@@ -437,7 +494,7 @@
 
 <section class="section" id="vertrauen">
  <div class="wrap">
-  <div class="section-head reveal"><div><p class="eyebrow">08 · Zusammenarbeit</p><h2>Vertrauen ist kein Extra.<br>Es ist die Grundlage.</h2></div><p>Gute Beratung berücksichtigt die Interessen des Verlags und die wirtschaftlichen Realitäten der Buchhandlung.</p></div>
+  <div class="section-head reveal"><div><p class="eyebrow">08 · Vertrauen und Interessenkonflikte</p><h2>Vertrauen ist kein Extra.<br>Es ist die Grundlage.</h2></div><p>Gute Beratung berücksichtigt die Interessen des Verlags und die wirtschaftlichen Realitäten der Buchhandlung.</p></div>
   <div class="trust-grid reveal">
    <article class="trust-card"><p class="eyebrow">Das Spannungsfeld</p><h3>Verkaufsinteresse vs. gute Beratung</h3><p>Der Verlag möchte Bücher verkaufen. Buchhandlungen müssen Budget, Platz und erwartbare Nachfrage berücksichtigen. Nicht jedes interessante Buch passt in jedes Sortiment.</p></article>
    <article class="trust-card"><p class="eyebrow">Die Vertrauensbasis</p><h3>Empfehlungen müssen passen</h3><p>Buchhändler*innen verlassen sich auf fachliche Einschätzungen. Langfristige Zusammenarbeit funktioniert, wenn ihre wirtschaftlichen Interessen ernst genommen werden.</p></article>
@@ -464,7 +521,7 @@
 
 <section class="section" id="quellen">
  <div class="wrap">
-  <div class="section-head reveal"><div><p class="eyebrow">11 · Weiterführende Quellen</p><h2>Zum Weiterlesen.</h2></div><p>Grundlagen und Branchenbeiträge, die im bereitgestellten Handout genannt werden.</p></div>
+  <div class="section-head reveal"><div><p class="eyebrow">11 · Quellen</p><h2>Zum Weiterlesen.</h2></div></div>
   <ol class="source-list reveal">
    <li>Schönstedt, Eduard; Breyer-Mayländer, Thomas (2010): <em>Der Buchverlag</em>. Kapitel 6: „Der Vertrieb“.</li>
    <li>Hoffmann, Nele: „Wie kommen die Bücher zu den Menschen?“</li>
@@ -475,7 +532,7 @@
    <li>Hanser Literaturverlage: Hanser Rauschen, Folge 12, „Verlagsvertreter:in: Was ist das eigentlich?“</li>
    <li>Schaeepe, Norbert (2008): „Warum Vertreter unersetzbar sind“, BuchMarkt.</li>
   </ol>
-  <p class="note">Hinweis: Die dargestellten Marktkennzahlen wurden aus dem bereitgestellten Handout übernommen und hier nicht unabhängig verifiziert.</p>
+  <p class="note"><strong>Hinweis zur Nutzung von KI</strong><br><em>Bei der Erstellung dieser Präsentation wurden KI-basierte Tools unterstützend eingesetzt. Dies betrifft insbesondere die technische Umsetzung und Programmierung der HTML-Präsentation sowie die sprachliche Korrektur und gestalterische Aufbereitung. Die inhaltliche Konzeption, Auswahl und Ausarbeitung der fachlichen Inhalte erfolgten eigenständig durch die Verfasser*innen und wurden nicht mithilfe von KI generiert. Die Verantwortung für die Inhalte und deren sachliche Richtigkeit liegt bei den Verfasser*innen.</em></p>
  </div>
 </section>
 </main>
@@ -485,11 +542,32 @@
 
 <script>
 const data={
- market:{eyebrow:'Marktbild · 2025',title:'Nominell stabil, unter Druck',body:`<p>Der deutsche Buchmarkt setzte 2025 rund <strong>9,62 Mrd. Euro</strong> um. Gegenüber 2024 entspricht das einem Minus von 2,7 %. Der Umsatz liegt damit in einer ähnlichen Größenordnung wie 2009, die Marktstruktur hat sich aber deutlich verändert.</p><div class="modal-visual"><div class="bars"><div class="bar" style="height:100%"><label>9,69</label></div><div class="bar" style="height:99.3%"><label>9,62</label></div></div><p class="modal-note">Umsatz in Mrd. Euro · 2009 und 2025, laut Handout</p></div><p><strong>Einordnung:</strong> Umsatzstabilität bedeutet nicht, dass alle Vertriebswege oder Marktteilnehmer gleichermaßen stabil sind.</p>`},
- channels:{eyebrow:'Vertriebswege',title:'Der Handel verlagert sich',body:`<p>Der Anteil des Sortimentsbuchhandels sank laut Handout von <strong>56,5 % (2003)</strong> auf <strong>40,8 % (2025)</strong>. Der Internetbuchhandel wuchs im selben Zeitraum von unter 10 % auf 26,1 %.</p><div class="modal-visual mini-bars"><div><div class="mini-bar-head"><span>Sortimentsbuchhandel</span><span>56,5 % → 40,8 %</span></div><div class="mini-track"><div class="mini-fill" style="width:40.8%"></div></div></div><div><div class="mini-bar-head"><span>Internetbuchhandel</span><span>&lt;10 % → 26,1 %</span></div><div class="mini-track"><div class="mini-fill green" style="width:26.1%"></div></div></div></div><p><strong>Einordnung:</strong> Vertrieb muss mit unterschiedlichen Einkaufswegen und Entscheidungsstrukturen umgehen.</p>`},
- audio:{eyebrow:'Digitale Formate',title:'Hörbücher wachsen deutlich',body:`<p>Hörbücher waren laut Handout 2025 das stärkste Wachstumssegment unter den genannten digitalen Formaten.</p><div class="modal-visual"><div class="bars"><div class="bar" style="height:40%"><label>+9,2 %</label></div><div class="bar" style="height:100%"><label>+23,1 %</label></div><div class="bar" style="height:57%"><label>+13,2 %</label></div></div><p class="modal-note">Downloads · Streaming · Hörbücher gesamt (Wachstumswerte aus dem Handout)</p></div><p>E-Books blieben mit einem Umsatzanteil von 6,3 % und ±0,0 % Veränderung weitgehend stabil.</p>`},
- novelties:{eyebrow:'Programmplanung',title:'Weniger neue Titel',body:`<p>2025 sank die Zahl der Erstauflagen und Novitäten auf <strong>52.644 Titel</strong>, nach 58.346 im Vorjahr. Das entspricht einem Rückgang um 9,8 %.</p><div class="modal-visual"><div class="bars"><div class="bar" style="height:100%"><label>58.346</label></div><div class="bar" style="height:90.2%"><label>52.644</label></div></div><p class="modal-note">Novitäten: Vorjahr und 2025</p></div><p><strong>Einordnung im Handout:</strong> Verlage wählen bei neuen Titeln selektiver aus; für neue Bücher wird die Vermittlung im Markt anspruchsvoller.</p>`},
- backlist:{eyebrow:'Backlist',title:'Bekannte Titel stabilisieren den Markt',body:`<p><strong>57 %</strong> der 2025 verkauften Bücher waren älter als zwölf Monate.</p><div class="modal-visual"><div class="mini-track" style="height:16px"><div class="mini-fill green" style="width:57%"></div></div><p class="modal-note">57 % älter als 12 Monate · 43 % übrige Verkäufe</p></div><p>Das Handout deutet dies als Hinweis darauf, dass etablierte Titel und Serien den Markt stabilisieren, während neue Titel schwerer durchdringen.</p>`},
+ market:{eyebrow:'Marktbild · 2025',title:'Nominell stabil, unter Druck',body:`<p>Der deutsche Buchmarkt setzte 2025 rund <strong>9,62 Mrd. Euro</strong> um. Gegenüber 2024 entspricht das einem Minus von 2,7 %. Der Umsatz liegt damit in einer ähnlichen Größenordnung wie 2009, die Marktstruktur hat sich aber deutlich verändert.</p><div class="modal-visual"><div class="bars"><div class="bar" style="height:100%"><label>9,69</label></div><div class="bar" style="height:99.3%"><label>9,62</label></div></div><p class="modal-note">Umsatz in Mrd. Euro · 2009 und 2025</p></div><p><strong>Einordnung:</strong> Umsatzstabilität bedeutet nicht, dass alle Vertriebswege oder Marktteilnehmer gleichermaßen stabil sind.</p>`},
+ channels:{eyebrow:'Vertriebswege',title:'Der Handel verlagert sich',body:`<p>Der Anteil des Sortimentsbuchhandels sank von <strong>56,5 % (2003)</strong> auf <strong>40,8 % (2025)</strong>. Der Internetbuchhandel wuchs im selben Zeitraum von unter 10 % auf 26,1 %.</p><div class="modal-visual mini-bars"><div><div class="mini-bar-head"><span>Sortimentsbuchhandel</span><span>56,5 % → 40,8 %</span></div><div class="mini-track"><div class="mini-fill" style="width:40.8%"></div></div></div><div><div class="mini-bar-head"><span>Internetbuchhandel</span><span>&lt;10 % → 26,1 %</span></div><div class="mini-track"><div class="mini-fill green" style="width:26.1%"></div></div></div></div><p><strong>Einordnung:</strong> Vertrieb muss mit unterschiedlichen Einkaufswegen und Entscheidungsstrukturen umgehen.</p>`},
+ audio:{eyebrow:'Digitale Formate',title:'Hörbücher wachsen deutlich',body:`<p>Hörbücher waren 2025 das stärkste Wachstumssegment unter den genannten digitalen Formaten.</p><div class="modal-visual">
+  <div class="bars">
+    <div class="bar-item">
+      <div class="bar" style="height:40%">
+        <label>+9,2 %</label>
+      </div>
+      <span>Downloads</span>
+    </div>
+    <div class="bar-item">
+      <div class="bar" style="height:100%">
+        <label>+23,1 %</label>
+      </div>
+      <span>Streaming</span>
+    </div>
+    <div class="bar-item">
+      <div class="bar" style="height:57%">
+        <label>+13,2 %</label>
+      </div>
+      <span>Hörbücher gesamt</span>
+    </div>
+  </div>
+</div>E-Books blieben mit einem Umsatzanteil von 6,3 % und ±0,0 % Veränderung weitgehend stabil.<br><br><em>Vergleich mit dem Vorjahreswert (2024)</em></p>`},
+ novelties:{eyebrow:'Programmplanung',title:'Weniger neue Titel',body:`<p>2025 sank die Zahl der Erstauflagen und Novitäten auf <strong>52.644 Titel</strong>, nach 58.346 im Vorjahr. Das entspricht einem Rückgang um 9,8 %.</p><div class="modal-visual"><div class="bars"><div class="bar" style="height:100%"><label>58.346</label></div><div class="bar" style="height:90.2%"><label>52.644</label></div></div><p class="modal-note">Novitäten: Vorjahr und 2025</p></div><p><strong>Einordnung:</strong> Verlage wählen bei neuen Titeln selektiver aus; für neue Bücher wird die Vermittlung im Markt anspruchsvoller.</p>`},
+ backlist:{eyebrow:'Backlist',title:'Bekannte Titel stabilisieren den Markt',body:`<p>Der Großteil der 2025 verkauften Bücher entfiel auf Titel, die bereits länger als zwölf Monate auf dem Markt waren.</p><div class="modal-visual"><div class="mini-track" style="height:16px"><div class="mini-fill green" style="width:57%"></div></div><p class="modal-note"><strong>57 %</strong> Backlist-Anteil</p></div><p>Dies deutet darauf hin, dass etablierte Titel und Serien zur Marktstabilität beitragen, während es neue Titel zunehmend schwerer haben, sich am Markt durchzusetzen.</p>`},
  why:{eyebrow:'Die Rolle des Vertriebs',title:'Warum braucht ein Verlag einen Vertrieb?',body:`Der Vertrieb...<ul><li>verbindet das Verlagsprogramm mit dem Buchmarkt.</li><li>präsentiert das Verlagsprogramm gegenüber dem Buchhandel und fördert den Absatz der Titel.</li><li>wertet Verkaufsdaten aus und analysiert den Markt, um Absatzpotenziale und Markttrends zu erkennen.</li><li>verbindet Buchkenntnis, Kommunikation, wirtschaftliches Denken und persönliche Beziehungen.</li></ul><div class="modal-visual"><strong>Kernidee:</strong> Ein veröffentlichtes Buch muss nicht nur verfügbar sein. Es muss auch entdeckt, passend einsortiert und für die jeweilige Kundschaft eingeschätzt werden.</div>`},
  inside:{eyebrow:'Bereich 01',title:'Innendienst',body:`<p>Der Innendienst bearbeitet Bestellungen, koordiniert Abläufe und kommuniziert mit anderen Abteilungen sowie Handelspartnern, erstellt Rechnungen, verwaltet und archiviert Unterlagen, pflegt Programme und koordiniert den Außendienst.</p><div class="modal-visual"><strong>Fokus:</strong> Informationen, Aufträge und interne Prozesse zuverlässig zusammenführen.</div>`},
  dispatch:{eyebrow:'Bereich 02',title:'Auslieferung',body:`<p>Die Auslieferung lagert Bücher, stellt Bestellungen für Buchhandlungen und Zwischenbuchhändler zusammen und versendet sie.</p><div class="modal-visual"><strong>Fokus:</strong> Das bestellte Buch muss korrekt zusammengestellt und auf den Weg gebracht werden.</div>`},
