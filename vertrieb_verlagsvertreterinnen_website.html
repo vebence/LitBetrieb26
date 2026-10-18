@@ -335,6 +335,74 @@
   color: var(--muted);
   font-size: .85rem;
 }
+
+.genre-comparison {
+  margin-top: 24px;
+  border-top: 1px solid rgba(106, 93, 123, 0.25);
+  border-bottom: 1px solid rgba(106, 93, 123, 0.25);
+  padding: 16px 0;
+}
+
+.genre-comparison summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--grape);
+  line-height: 1.5;
+  list-style-position: outside;
+  margin-left: 18px;
+}
+
+.genre-comparison summary::marker {
+  color: var(--sage);
+}
+
+.genre-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.genre-column h4 {
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+  color: var(--grape);
+}
+
+.genre-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(106, 93, 123, 0.15);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.genre-row strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.genre-column.decreases strong {
+  color: var(--lav);
+}
+
+.genre-column.increases strong {
+  color: var(--sage);
+}
+
+.genre-comparison .modal-note {
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .genre-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -377,7 +445,11 @@
    <button class="metric-card" data-modal="novelties"><span class="metric-label">Novitäten 2025</span><div><div class="metric-value">52.644</div><p>9,8 % weniger neue Titel als im Vorjahr.</p></div><span class="metric-arrow" aria-hidden="true">ⓘ</span></button>
    <button class="metric-card" data-modal="backlist"><span class="metric-label">Backlist als Stabilitätsanker</span><div><div class="metric-value">57 %</div><p>der verkauften Bücher waren älter als zwölf Monate.</p></div><span class="metric-arrow" aria-hidden="true">ⓘ</span></button>
   </div>
-  <p class="note">Klicke auf eine Kennzahl für weitere Einordnung und Visualisierungen.<br>Zahlen gemäß Börsenverein & Börsenblatt.</p>
+  <p class="note"><strong>Datengrundlage:</strong> Börsenverein des Deutschen Buchhandels,
+  <a href="https://www.boersenverein.de/markt-daten/marktforschung/wirtschaftszahlen/"
+     target="_blank" rel="noopener noreferrer">
+    <em>Buch und Buchhandel in Zahlen 2026</em>
+  </a>.</p>
  </div>
 </section>
 
@@ -613,7 +685,49 @@ const data={
       <span>2025</span>
     </div>
   </div>
-</div><p>Umsatzstabilität bedeutet nicht, dass alle Vertriebswege oder Marktteilnehmer gleichermaßen stabil sind.<br>Im Vergleich zu 2024 verzeichnete der deutsche Buchmarkt einen nominalen <strong>Umsatzrückgang von 2,7 %</strong>. Diese Entwicklung verlief jedoch je nach Genre und Format unterschiedlich: Während einzelne Segmente deutliche Zuwächse erzielten, mussten andere stärkere Umsatzrückgänge hinnehmen.</p>`},
+</div><p>Umsatzstabilität bedeutet nicht, dass alle Vertriebswege oder Marktteilnehmer gleichermaßen stabil sind. <strong>Im Vergleich zu 2024</strong> verzeichnete der deutsche Buchmarkt einen nominalen <strong>Umsatzrückgang von 2,7 %</strong>. Diese Entwicklung verlief jedoch je nach Genre und Format unterschiedlich: Während einzelne Segmente deutliche Zuwächse erzielten, mussten andere stärkere Umsatzrückgänge hinnehmen.</p>
+<details class="genre-comparison">
+  <summary>Welche Warengruppen verzeichneten Umsatzrückgänge, welche Zuwächse?</summary>
+
+  <div class="genre-columns">
+    <div class="genre-column decreases">
+      <h4>Umsatzrückgänge</h4>
+      <div class="genre-row">
+        <span>Reisebücher</span>
+        <strong>−11,6 %</strong>
+      </div>
+      <div class="genre-row">
+        <span>Ratgeber</span>
+        <strong>−8,1 %</strong>
+      </div>
+      <div class="genre-row">
+        <span>Sachbücher</span>
+        <strong>−4,6 %</strong>
+      </div>
+      <div class="genre-row">
+        <span>Kinder- und Jugendbücher</span>
+        <strong>−2,4 %</strong>
+      </div>
+    </div>
+
+    <div class="genre-column increases">
+      <h4>Umsatzzuwächse</h4>
+      <div class="genre-row">
+        <span>Belletristik</span>
+        <strong>+1,2 %</strong>
+      </div>
+      <div class="genre-row">
+        <span>Young Adult</span>
+        <strong>+4,8 %</strong>
+      </div>
+      <div class="genre-row">
+        <span>New Adult</span>
+        <strong>+9,6 %</strong>
+      </div>
+    </div>
+  </div>
+  <p class="modal-note"><em>Veränderung des Umsatzes 2025 gegenüber 2024.<br></em></p>
+</details>`},
  channels:{eyebrow:'Vertriebswege',title:'Der Handel verlagert sich',body:`<p>Der Anteil des Sortimentsbuchhandels sank von <strong>56,5 % (2003)</strong> auf <strong>40,8 % (2025)</strong>. Der Internetbuchhandel wuchs im selben Zeitraum von unter 10 % auf 26,1 %.</p><div class="modal-visual mini-bars"><div><div class="mini-bar-head"><span>Sortimentsbuchhandel</span><span>56,5 % → 40,8 %</span></div><div class="mini-track"><div class="mini-fill" style="width:40.8%"></div></div></div><div><div class="mini-bar-head"><span>Internetbuchhandel</span><span>&lt;10 % → 26,1 %</span></div><div class="mini-track"><div class="mini-fill green" style="width:26.1%"></div></div></div></div><p><strong>Einordnung:</strong> Vertrieb muss mit unterschiedlichen Einkaufswegen und Entscheidungsstrukturen umgehen.</p>`},
  audio:{eyebrow:'Digitale Formate',title:'Hörbücher wachsen deutlich',body:`<p>Hörbücher waren 2025 das stärkste Wachstumssegment unter den genannten digitalen Formaten.</p><div class="modal-visual">
   <div class="bars">
